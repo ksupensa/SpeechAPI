@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="Write_It" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,96 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ccy-RM-gzR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write It !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qE7-jY-0gT">
+                                        <rect key="frame" x="137.5" y="8.5" width="99.5" height="33"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="jhf-t8-ORD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="qE7-jY-0gT" firstAttribute="centerX" secondItem="Ccy-RM-gzR" secondAttribute="centerX" id="Ymg-pR-NbH"/>
+                                    <constraint firstAttribute="height" constant="50" id="aLj-Ga-XLi"/>
+                                    <constraint firstItem="qE7-jY-0gT" firstAttribute="centerY" secondItem="Ccy-RM-gzR" secondAttribute="centerY" id="yzX-83-lIR"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" editable="NO" text="Please Tap the round button to transcribe your recording" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3Zp-cE-5xa">
+                                <rect key="frame" x="20" y="70" width="335" height="475.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zy3-Lc-TkW" customClass="CircleBtn" customModule="Write_It" customModuleProvider="target">
+                                <rect key="frame" x="157" y="565.5" width="60" height="60"/>
+                                <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="I6v-3L-JTG"/>
+                                    <constraint firstAttribute="width" constant="60" id="dmD-2R-QF1"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="playBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hxw-Ux-pBh"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play and Write it" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YkZ-1l-4VT">
+                                <rect key="frame" x="122.5" y="635.5" width="130" height="23.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="yU4-26-Wwk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="6ze-vq-CPl">
+                                <rect key="frame" x="152.5" y="560.5" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="tDN-rS-ZVa"/>
+                                    <constraint firstAttribute="height" constant="70" id="yOI-2F-br5"/>
+                                </constraints>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="YkZ-1l-4VT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="79y-Lz-nil"/>
+                            <constraint firstItem="3Zp-cE-5xa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="8dw-eg-NGZ"/>
+                            <constraint firstItem="Zy3-Lc-TkW" firstAttribute="top" secondItem="3Zp-cE-5xa" secondAttribute="bottom" constant="20" id="ClY-9i-gWs"/>
+                            <constraint firstItem="Ccy-RM-gzR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Ea2-s5-Fhf"/>
+                            <constraint firstAttribute="trailing" secondItem="Ccy-RM-gzR" secondAttribute="trailing" id="JZG-rh-8gA"/>
+                            <constraint firstItem="Ccy-RM-gzR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Nlp-KW-EU2"/>
+                            <constraint firstAttribute="trailing" secondItem="3Zp-cE-5xa" secondAttribute="trailing" constant="20" id="cpZ-ah-S6C"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="YkZ-1l-4VT" secondAttribute="bottom" constant="8" id="hju-yL-APW"/>
+                            <constraint firstItem="3Zp-cE-5xa" firstAttribute="top" secondItem="Ccy-RM-gzR" secondAttribute="bottom" constant="20" id="hzK-Up-8Yf"/>
+                            <constraint firstItem="6ze-vq-CPl" firstAttribute="centerY" secondItem="Zy3-Lc-TkW" secondAttribute="centerY" id="thJ-3l-Zks"/>
+                            <constraint firstItem="Zy3-Lc-TkW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vE4-MM-ZzB"/>
+                            <constraint firstItem="YkZ-1l-4VT" firstAttribute="top" secondItem="Zy3-Lc-TkW" secondAttribute="bottom" constant="10" id="xTH-Xz-gvD"/>
+                            <constraint firstItem="6ze-vq-CPl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xwW-t2-f9r"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loadingSpinner" destination="6ze-vq-CPl" id="Tsn-yO-CQu"/>
+                        <outlet property="playBtn" destination="Zy3-Lc-TkW" id="pK3-yv-Lfg"/>
+                        <outlet property="textView" destination="3Zp-cE-5xa" id="vTb-5i-yDC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="245.59999999999999" y="141.67916041979012"/>
         </scene>
     </scenes>
 </document>
